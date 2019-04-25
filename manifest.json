@@ -1,0 +1,22 @@
+{
+  "name": "Kondo",
+  "version": "1.0",
+  "description": "React development with things that don't bring joy removed",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "webRequest",
+    "activeTab",
+    "*://*/*"
+  ],
+  "browser_action": {
+    "default_title": "Show MIME"
+  },
+  "options_page": "options.html",
+  "manifest_version": 2
+}
