@@ -25,7 +25,10 @@ chrome.webRequest.onHeadersReceived.addListener(
     if (details.tabId !== -1) {
       let header = getHeaderFromHeaders(details.responseHeaders, 'content-type');
       // If the header is set, use its value; otherwise, use `undefined`
-      tabToMimeType[details.tabId] = header && header.value.split(';', 1)[0];
+      let mimeType = header && header.value.split(';', 1)[0];
+      let url = details.url;
+      tabToMimeType[details.tabId] = mimeType;
+      // alert('Load URL ' + url + ' with MIME type ' + mimeType + ' \n' + JSON.stringify(details));
     }
   },
   {

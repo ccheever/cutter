@@ -12,11 +12,17 @@
     "storage",
     "webRequest",
     "activeTab",
-    "*://*/*"
+    "<all_urls>"
   ],
   "browser_action": {
     "default_title": "Show MIME"
   },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*.js", "file://*/*.js"],
+      "js": ["babel.min.js", "kondo.js"]
+    }
+  ],
   "options_page": "options.html",
   "manifest_version": 2
 }
